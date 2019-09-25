@@ -4,6 +4,18 @@
     <img src="https://github.com/ARKEcosystem/core-docker/blob/master/banner.png" />
 </p>
 
+## [Production setup](production/README.md)
+
+## Development setup
+
+> Please run `generate-dev.sh` in order to generate ARK Core Docker files
+
+```
+bash generate-dev.sh
+```
+
+## [Windows Development setup](windows/README.md)
+
 ## Security
 
 If you discover a security vulnerability within this package, please send an e-mail to security@ark.io. All security vulnerabilities will be promptly addressed.
