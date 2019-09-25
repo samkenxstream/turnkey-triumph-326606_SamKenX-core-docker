@@ -30,7 +30,9 @@ Our example uses `D:\core` as a PATH, so if you do not want to edit `docker-comp
 
 > Clone [core-docker](https://github.com/ArkEcosystem/core-docker.git) repository.
 
-**NOTE** if you cloned ARK Core to any other PATH different than `D:\core` you'll have to edit `docker-compose.yml` to match the path:
+**NOTE** 
+
+If you cloned ARK Core to any other PATH different than `D:\core` you'll have to edit `docker-compose.yml` to match the path:
 
 ```
 cd core-docker/development/windows
