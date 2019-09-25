@@ -35,7 +35,7 @@ Our example uses `D:\core` as a PATH, so if you do not want to edit `docker-comp
 If you cloned ARK Core to any other PATH different than `D:\core` you'll have to edit `docker-compose.yml` to match the path:
 
 ```
-cd core-docker/development/windows
+cd core-docker/windows
 ```
 
 Open `docker-compose.yml` and:
@@ -58,7 +58,7 @@ _To:_
 > Open PowerShell as Administrator and enter the following code:
 
 ```
-cd core-docker/development/windows
+cd core-docker/windows
 docker-compose up -d
 ```
 
