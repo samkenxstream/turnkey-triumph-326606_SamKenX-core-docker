@@ -16,7 +16,7 @@ bash generate-dev.sh
 
 **NOTE**
 
-This by default generates all Docker dev files with token `ark`. If you prefer a different token name, just add it as an extra argument to the script:
+This by default generates all Docker dev files with token `ark`. If you prefer a different token name, just pass it as an extra argument to the script:
 
 ```
 bash generate-dev.sh MyToken
