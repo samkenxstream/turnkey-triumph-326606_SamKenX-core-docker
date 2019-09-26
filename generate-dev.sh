@@ -2,7 +2,7 @@
 
 TOKEN=${1:-ark}
 TemplateDir="templates"
-DstDir="development/*nix"
+DstDir="development"
 
 for dir in `ls -1 $TemplateDir`; do
 
