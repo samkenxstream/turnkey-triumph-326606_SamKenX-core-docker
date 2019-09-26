@@ -40,5 +40,5 @@ volumes:
   core:
     driver_opts:
       type: none
-      device: $PWD/../../../
+      device: $PWD/../../core
       o: bind

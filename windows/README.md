@@ -26,7 +26,7 @@ Unless your IDE has a speciall setting to preserve Unix format EOL, every file y
 
 > Clone [ARK Core](https://github.com/ArkEcosystem/core.git) repository. Recommended branch to use for development is `develop`.
 
-Our example uses `D:\core` as a PATH, so if you do not want to edit `docker-compose.yml`, you just go ahead and clone [core-docker](https://github.com/ArkEcosystem/core-docker.git) to the same path.
+Our example uses `D:\core` as a PATH, so if you do not want to edit `docker-compose.yml`, you just go ahead and clone [ARK Core](https://github.com/ArkEcosystem/core.git) to the same path.
 
 > Clone [core-docker](https://github.com/ArkEcosystem/core-docker.git) repository.
 
