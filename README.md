@@ -21,14 +21,6 @@ This by default generates all Docker dev files with token `ark`. If you prefer a
 ```
 bash generate-dev.sh MyToken
 ```
-
-_In case you need to start with a clean Database:_
-
-```bash
-docker-compose down -v
-docker-compose up -d
-```
-
 ### Serve ARK Core as a Collection of Containers
 
 **Run a PostgreSQL container, build and run ARK Core using a mounted volume.**
@@ -58,7 +50,7 @@ _In case you need to start with a clean Database:_
 ```bash
 docker-compose down -v postgres
 docker-compose up -d postgres
-
+```
 
 _Need to start everything from scratch and make sure there are no remaining cached containers, images or volumes left? Just use the **purge_all.sh** script._
 
