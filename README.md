@@ -32,12 +32,22 @@ The build process expectes your locally cloned ARK Core git folder location to b
 
 _Along with PostgreSQL container, you also have a NodeJS container which mounts your local ARK Core git folder inside the container and installs all NPM prerequisites._
 
+> Clone ARK Core repository. Recommended branch to use for development is `develop`.
+
+```
+git clone https://github.com/ArkEcosystem/core.git -b develop ~/core
+```
+
 > Let's build and run the containers:
 
 ```bash
-cd docker/development/$NETWORK      # (NETWORK = testnet || devnet)
+cd ~/core-docker/development/$NETWORK      # (NETWORK = testnet || devnet)
 docker-compose up -d
 ```
+
+**NOTE**
+Your local `core-docker` git folder is expected to be at `~/core-docker`. This is also important for the build process.
+
 
 _You can now enter your ark-core container and use NodeJS in a Docker container (Linux environment)._
 
