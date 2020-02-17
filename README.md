@@ -1,35 +1,73 @@
-# ARK Core
+# ARK Core - Docker
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/ARKEcosystem/core/master/banner.png" />
+    <img src="https://github.com/ARKEcosystem/core-docker/blob/master/banner.png" />
 </p>
 
-[![Build Status](https://badgen.now.sh/circleci/github/ARKEcosystem/core)](https://circleci.com/gh/ARKEcosystem/core)
-[![Codecov](https://badgen.now.sh/codecov/c/github/arkecosystem/core)](https://codecov.io/gh/arkecosystem/core)
-[![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
+## [Production setup](production/README.md)
 
-> Lead Maintainer: [Joshua Noack](https://github.com/supaiku0)
+## Development setup
 
-## Introduction
+> Please run `generate-dev.sh` in order to generate ARK Core Docker files
 
-> This repository contains all plugins that make up the ARK Core.
+```
+bash generate-dev.sh
+```
 
-Check our [dedicated documentation site](https://docs.ark.io/guidebook/core/plugins/) for information about all available plugins and [How to write a Core Plugin
-](https://docs.ark.io/tutorials/core/plugins/how-to-write-a-core-plugin.html) if you want to get started with developing your own plugins.
+**NOTE**
 
-## Documentation
+This by default generates all Docker dev files with token `ark`. If you prefer a different token name, just pass it as an extra argument to the script:
 
--   Development : https://docs.ark.io/guidebook/core/development.html
--   Docker : https://docs.ark.io/guidebook/core/docker.html
+```
+bash generate-dev.sh MyToken
+```
+### Serve ARK Core as a Collection of Containers
 
-## API Documentation
+**Run a PostgreSQL container, build and run ARK Core using a mounted volume.**
 
--   API v1 : https://docs.ark.io/api/public/v1/
--   API v2 : https://docs.ark.io/api/public/v2/
+During container start your locally cloned ARK Core folder is being [mounted](https://docs.docker.com/storage/volumes/) inside the container. This configuration works well when developing ARK Core itself, as you do not need to rebuild the container to test your changes.
 
-## GitHub Development Bounty
+**WARNING**
+The build process expectes your locally cloned ARK Core git folder location to be `~/core` or it will fail.
 
--   Get involved with the development and start earning ARK : https://bounty.ark.io
+_Along with PostgreSQL container, you also have a NodeJS container which mounts your local ARK Core git folder inside the container and installs all NPM prerequisites._
+
+> Clone ARK Core repository. Recommended branch to use for development is `develop`.
+
+```
+git clone https://github.com/ArkEcosystem/core.git -b develop ~/core
+```
+
+> Let's build and run the containers:
+
+```bash
+cd ~/core-docker/development/$NETWORK      # (NETWORK = testnet || devnet)
+docker-compose up -d
+```
+
+**NOTE**
+Your local `core-docker` git folder is expected to be at `~/core-docker`. This is also important for the build process.
+
+
+_You can now enter your ark-core container and use NodeJS in a Docker container (Linux environment)._
+
+```bash
+docker exec -it $TOKEN-$NETWORK-core bash   # (NETWORK = testnet || devnet, default TOKEN is `ark`)
+```
+
+_In case you need to start with a clean Database:_
+
+```bash
+docker-compose down -v postgres
+docker-compose up -d postgres
+```
+
+_Need to start everything from scratch and make sure there are no remaining cached containers, images or volumes left? Just use the **purge_all.sh** script._
+
+**WARNING**
+Development files/presets are not Production ready. Official Production ARK-Core Docker images are now available at [Docker Hub](https://hub.docker.com/r/arkecosystem/core).
+
+## [Windows Development setup](windows/README.md)
 
 ## Security
 
