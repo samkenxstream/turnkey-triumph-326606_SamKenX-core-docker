@@ -18,5 +18,5 @@ RUN apt-get update && \
 
 RUN dos2unix /entrypoint.sh
 
-EXPOSE 4000 4003 4040
+EXPOSE 4000 4003 4010 4020 4040
 
